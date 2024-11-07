@@ -1,4 +1,4 @@
-# code_gen_agent
+# Generative Agent
 This Project was made to play around with Large Language Models (LLMs)
 For this: 
   * Ollama was locally installed
