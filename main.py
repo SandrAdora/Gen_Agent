@@ -33,6 +33,7 @@ parser = LlamaParse(result_type="markdown")
 # Extract files that end with pdf
 file_extractor = {".pdf": parser}
 # Use the Simplediretory reader to search for a folder and give the files found in the folder into a json document
+# You need to create a folder called data in your ide. In that folder insert the files readme.pdf and test.py
 documents = SimpleDirectoryReader("./data", file_extractor=file_extractor).load_data()
 #check if documents were loaded
 print(documents)
@@ -98,6 +99,7 @@ while (prompt := input("Enter a prompt (q to quit): ")) != "q":
     filename = cleaned_json["filename"]
 
     try:
+        # In your ide you would need to create a folder called output
         with open(os.path.join("output" ,filename), "w") as f: #TO avoid overriting the file we already have
             f.write(cleaned_json["code"])
         print("Saved file", filename)
